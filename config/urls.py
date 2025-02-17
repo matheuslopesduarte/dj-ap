@@ -22,7 +22,7 @@ from cadastro.views import EstadoViewSet
 
 from pedidos.views import ClienteViewSet, PedidoViewSet, ItensPedidoViewSet
 
-from biblioteca.views import AlunoViewSet, LivroViewSet, EmprestimoViewSet
+from biblioteca.views import AlunoViewSet as AlunoBibli, LivroViewSet, EmprestimoViewSet
 
 from hospital.views import PacienteViewSet, MedicoViewSet, ConsultaViewSet
 
@@ -34,7 +34,7 @@ pedidos_router.register(r'pedidos', PedidoViewSet)
 pedidos_router.register(r'itens', ItensPedidoViewSet)
 
 biblioteca_router = DefaultRouter()
-biblioteca_router.register(r'alunos', AlunoViewSet)
+biblioteca_router.register(r'alunos', AlunoBibli)
 biblioteca_router.register(r'livros', LivroViewSet)
 biblioteca_router.register(r'emprestimos', EmprestimoViewSet)
 
