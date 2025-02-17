@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'pedidos',
     'biblioteca',
     'hospital',
-
+    'escola',
 ]
 
 MIDDLEWARE = [
