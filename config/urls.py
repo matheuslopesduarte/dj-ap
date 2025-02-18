@@ -54,8 +54,8 @@ router.register(r'estados', EstadoViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('pedidos/api/', include(pedidos_router.urls)),
-    path('biblioteca/api/', include(biblioteca_router.urls)),
-    path('hospital/api/', include(hospital_router.urls)),
-    path('escola/api/', include(escola_router.urls)),
+    path('pedidos/api/', include((pedidos_router.urls, 'pedidos'))),
+    path('biblioteca/api/', include((biblioteca_router.urls, 'biblioteca'))),
+    path('hospital/api/', include((hospital_router.urls, 'hospital'))),
+    path('escola/api/', include((escola_router.urls, 'escola'))),
 ]
