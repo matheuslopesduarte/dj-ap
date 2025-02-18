@@ -11,7 +11,7 @@ class Cliente(models.Model):
         return self.nome
     
 class Pedido(models.Model):
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
     data = models.DateTimeField(auto_now_add=True)
     valor = models.DecimalField(max_digits=8, decimal_places=2)
 
@@ -19,7 +19,7 @@ class Pedido(models.Model):
         return f'{self.cliente}'
     
 class ItensPedido(models.Model):
-    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    pedido = models.ForeignKey(Pedido, on_delete=models.PROTECT)
     produto = models.CharField(max_length=100)
     quantidade = models.PositiveIntegerField()
     valor = models.DecimalField(max_digits=8, decimal_places=2)
